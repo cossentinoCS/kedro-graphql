@@ -185,7 +185,7 @@ class DataSet:
                 {
                   "name": "text_in",
                   "filepath": "./data/01_raw/text_in.txt",
-                  "type": "text.TextDataSet",
+                  "type": "text.TextDataset",
                   "save_args":[{"name": "say", "value": "hello"}],
                   "load_args":[{"name": "say", "value": "hello"}]
                 }
@@ -194,7 +194,7 @@ class DataSet:
 
                 {
                   "name": "text_in",
-                  "config":  '{"filepath": "./data/01_raw/text_in.txt", "type": "text.TextDataSet", "save_args": [{"name": "say", "value": "hello"}], "load_args": [{"name": "say", "value": "hello"}]}'
+                  "config":  '{"filepath": "./data/01_raw/text_in.txt", "type": "text.TextDataset", "save_args": [{"name": "say", "value": "hello"}], "load_args": [{"name": "say", "value": "hello"}]}'
                 }
 
         """
@@ -248,9 +248,9 @@ class DataCatalogInput:
         """
         context.config_loader["catalog"]
 
-        {'text_in': {'type': 'text.TextDataSet',
+        {'text_in': {'type': 'text.TextDataset',
                      'filepath': './data/01_raw/text_in.txt'},
-         'text_out': {'type': 'text.TextDataSet',
+         'text_out': {'type': 'text.TextDataset',
                       'filepath': './data/02_intermediate/text_out.txt'}}
 
         Example usage:
@@ -261,8 +261,8 @@ class DataCatalogInput:
 
             print(catalog)
 
-            [DataSetInput(name='text_in', config='{"type": "text.TextDataSet", "filepath": "./data/01_raw/text_in.txt"}', type=None, filepath=None, save_args=None, load_args=None, credentials=None), 
-             DataSetInput(name='text_out', config='{"type": "text.TextDataSet", "filepath": "./data/02_intermediate/text_out.txt"}', type=None, filepath=None, save_args=None, load_args=None, credentials=None)]
+            [DataSetInput(name='text_in', config='{"type": "text.TextDataset", "filepath": "./data/01_raw/text_in.txt"}', type=None, filepath=None, save_args=None, load_args=None, credentials=None), 
+             DataSetInput(name='text_out', config='{"type": "text.TextDataset", "filepath": "./data/02_intermediate/text_out.txt"}', type=None, filepath=None, save_args=None, load_args=None, credentials=None)]
         
         """
         return [DataSetInput(name = k, config = json.dumps(v)) for k,v in config.items()]
@@ -396,8 +396,8 @@ class PipelineInput:
                           inputs=None, 
                           outputs=None, 
                           data_catalog=[
-                            DataSetInput(name='text_in', config='{"type": "text.TextDataSet", "filepath": "./data/01_raw/text_in.txt"}', type=None, filepath=None, save_args=None, load_args=None, credentials=None), 
-                            DataSetInput(name='text_out', config='{"type": "text.TextDataSet", "filepath": "./data/02_intermediate/text_out.txt"}', type=None, filepath=None, save_args=None, load_args=None, credentials=None)
+                            DataSetInput(name='text_in', config='{"type": "text.TextDataset", "filepath": "./data/01_raw/text_in.txt"}', type=None, filepath=None, save_args=None, load_args=None, credentials=None), 
+                            DataSetInput(name='text_out', config='{"type": "text.TextDataset", "filepath": "./data/02_intermediate/text_out.txt"}', type=None, filepath=None, save_args=None, load_args=None, credentials=None)
                           ], 
                           tags=[TagInput(key='owner', value='sean')])
 
@@ -410,14 +410,14 @@ class PipelineInput:
             'inputs': None,
             'outputs': None,
             'data_catalog': [{'name': 'text_in',
-              'config': '{"type": "text.TextDataSet", "filepath": "./data/01_raw/text_in.txt"}',
+              'config': '{"type": "text.TextDataset", "filepath": "./data/01_raw/text_in.txt"}',
               'type': None,
               'filepath': None,
               'save_args': None,
               'load_args': None,
               'credentials': None},
              {'name': 'text_out',
-              'config': '{"type": "text.TextDataSet", "filepath": "./data/02_intermediate/text_out.txt"}',
+              'config': '{"type": "text.TextDataset", "filepath": "./data/02_intermediate/text_out.txt"}',
               'type': None,
               'filepath': None,
               'save_args': None,

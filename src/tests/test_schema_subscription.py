@@ -2,7 +2,6 @@
 
 """
 import pytest
-
 @pytest.mark.usefixtures('mock_celery_session_app')
 @pytest.mark.usefixtures('celery_session_worker')
 @pytest.mark.usefixtures('depends_on_current_app')

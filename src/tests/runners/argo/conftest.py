@@ -74,7 +74,7 @@ def mock_pipeline_argo(mock_app, s3_object, s3_client):
 
     out_fname = "text_out_"+str(uuid4())+".txt"
     
-    inputs = [{"name": "text_in", "type": "text.TextDataSet", 
+    inputs = [{"name": "text_in", "type": "text.TextDataset", 
                "filepath": s3_object, 
                "credentials": {"key":"admin", 
                                "secret":"password", 
@@ -83,7 +83,7 @@ def mock_pipeline_argo(mock_app, s3_object, s3_client):
                                 }}
             }]
     
-    outputs = [{"name":"text_out", "type": "text.TextDataSet", 
+    outputs = [{"name":"text_out", "type": "text.TextDataset", 
                 "filepath": "s3://my-bucket/"+out_fname, 
                 "credentials": {"key":"admin", 
                                 "secret":"password", 
